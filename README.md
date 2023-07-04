@@ -47,11 +47,13 @@
  	sudo chmod +x kops-linux-amd64
  	sudo mv kops-linux-amd64 /usr/local/bin/kops
  
-## 4) Install kubectl kubernetes client if it is not already installed
+## 4a) Install kubectl kubernetes client if it is not already installed
 ```sh
  sudo curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
  sudo chmod +x ./kubectl
  sudo mv ./kubectl /usr/local/bin/kubectl
+
+4b) Grant IAM access for kops user to manage required resources using  secret key and secret access key. In doing this, you have to create an IAM role
 ```
 ## 5) Create an IAM role from AWS Console or CLI with the below polocies
  aws configure
